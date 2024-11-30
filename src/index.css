@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background: url(./assets/pictures/gameBanner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-grid {
+  margin:  20px ;
+  /* margin-left:  65px; */
+    padding:0px 120px ;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+  
+}
+
+/* img {
+  height: 300px;
+} */
+
+.card {
+  position: relative;
+  height: 150px;
+  width: 113px;
+  overflow: hidden;
+}
+
+.card .front {
+  height: auto;
+}
+
+
+.card .back {
+  height: fit-content;
+}
+
+.card img {
+  height: auto;
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
