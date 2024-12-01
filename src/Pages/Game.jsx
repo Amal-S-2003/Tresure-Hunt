@@ -16,9 +16,12 @@ function Game() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
-  const [win, setWin] = useState(false);
+  const [win, setWin] = useState(0);
+  const [won, setWon] = useState(false);
   // Suffle Cards
   const shuffleCards = () => {
+    console.log("123");
+
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
@@ -26,10 +29,10 @@ function Game() {
     setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
+    setWon(false);
   };
   // Handle a Choice
   const handleChoice = (card) => {
-    console.log(card);
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
@@ -41,6 +44,7 @@ function Game() {
         setCards((prevCards) => {
           return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
+              setWin(win + 1);
               return { ...card, matched: true };
             } else {
               return card;
@@ -52,9 +56,14 @@ function Game() {
         setTimeout(() => resetTurn(), 1000);
       }
     }
+    console.log(win, "win");
 
+    if (win == 6) {
+      setWon(true);
+    } else {
+      setWon(false);
+    }
   }, [choiceOne, choiceTwo]);
-  console.log(cards);
 
   // reset choices & increase turn
   const resetTurn = () => {
@@ -67,17 +76,21 @@ function Game() {
   // Start a New game Automatically
   useEffect(() => {
     shuffleCards();
+    setWon(false);
   }, []);
   return (
     <>
       <Container className="text-center px-5 py-2 d-flex flex-column align-items-center">
-        <h1 className="fw-bold text-dark">Treasure Hunt</h1>
+        <h1 className="fw-bold heading">Treasure Hunt</h1>
         <button
           className="btn btn-outline-dark fw-bold border-3"
           onClick={shuffleCards}
         >
           New Game
         </button>
+        <p className="fw-bold text-dark">Turns:{turns}</p>
+
+        {won ? <Alert shuffleCards={shuffleCards} setWon={setWon} /> : ""}
         <div className="card-grid ">
           {cards.map((card) => (
             <SingleCard
@@ -89,7 +102,6 @@ function Game() {
             />
           ))}
         </div>
-        <p className="fw-bold text-dark">Turns:{turns}</p>
       </Container>
     </>
   );

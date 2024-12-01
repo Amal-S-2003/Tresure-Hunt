@@ -12,7 +12,7 @@ body{
 }
 
 .card-grid {
-  margin:  20px ;
+  /* margin:  20px ; */
   /* margin-left:  65px; */
     padding:0px 120px ;
   display: grid;
@@ -30,8 +30,8 @@ body{
 
 .card {
   position: relative;
-  height: 150px;
-  width: 113px;
+  height: 130px;
+  width: 98px;
   overflow: hidden;
 }
 
@@ -71,4 +71,29 @@ body{
 .flipped .back {
   transform: rotateY(90deg);
   transition-delay: 0s;
+}
+
+.alert{
+  position: absolute;
+  z-index: 99;
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  transform: translate(0,-50%);
+  background-color: white;
+  align-items: center;
+  display: flex;
+  background-color: burlywood;
+  justify-content: center;
+  border: 2px solid darkgoldenrod;
+}
+
+.alert h1{
+  font-size: 50px;
+  color: #956319;
+}
+
+.heading{
+  color: #956319;
+  filter: drop-shadow(1px 1px 0px #000);
 }
