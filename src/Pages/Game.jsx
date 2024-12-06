@@ -18,14 +18,6 @@ const cardImages = [
   { src: sward1, matched: false },
 ];
 
-// const cardImages = [
-//   { src: `src\\assets\\pictures\\bottle1.jpg`, matched: false },
-//   { src: `src\\assets\\pictures\\hang1.jpg`, matched: false },
-//   { src: `src\\assets\\pictures\\hat1.jpg`, matched: false },
-//   { src: `src\\assets\\pictures\\lens1.jpg`, matched: false },
-//   { src: `src\\assets\\pictures\\ship1.jpg`, matched: false },
-//   { src: `src\\assets\\pictures\\sward1.jpg`, matched: false },
-// ];
 function Game() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
@@ -97,7 +89,7 @@ function Game() {
   }, []);
   return (
     <>
-      <Container className="text-center px-5 py-2 d-flex flex-column align-items-center">
+      <Container className="text-center content px-5 py-2 d-flex flex-column align-items-center">
         <h1 className="fw-bold heading">Treasure Hunt</h1>
         <button
           className="btn btn-outline-dark fw-bold border-3"
