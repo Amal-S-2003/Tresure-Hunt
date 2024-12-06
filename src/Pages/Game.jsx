@@ -20,8 +20,6 @@ function Game() {
   const [won, setWon] = useState(false);
   // Suffle Cards
   const shuffleCards = () => {
-    console.log("123");
-
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
@@ -29,6 +27,7 @@ function Game() {
     setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
+    setWin(0);
     setWon(false);
   };
   // Handle a Choice
@@ -45,6 +44,8 @@ function Game() {
           return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
               setWin(win + 1);
+              console.log("win", win);
+
               return { ...card, matched: true };
             } else {
               return card;
