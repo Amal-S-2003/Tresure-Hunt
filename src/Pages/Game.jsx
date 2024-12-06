@@ -3,12 +3,12 @@ import SingleCard from "../Components/SingleCard";
 import { Container } from "react-bootstrap";
 import Alert from "../Components/Alert";
 const cardImages = [
-  { src: "src\\assets\\pictures\\bottle1.jpg", matched: false },
-  { src: "src\\assets\\pictures\\hang1.jpg", matched: false },
-  { src: "src\\assets\\pictures\\hat1.jpg", matched: false },
-  { src: "src\\assets\\pictures\\lens1.jpg", matched: false },
-  { src: "src\\assets\\pictures\\ship1.jpg", matched: false },
-  { src: "src\\assets\\pictures\\sward1.jpg", matched: false },
+  { src: `src\assets\pictures\bottle1.jpg`, matched: false },
+  { src: `src\assets\pictures\hang1.jpg`, matched: false },
+  { src: `src\assets\pictures\hat1.jpg`, matched: false },
+  { src: `src\assets\pictures\lens1.jpg`, matched: false },
+  { src: `src\assets\pictures\ship1.jpg`, matched: false },
+  { src: `src\assets\pictures\sward1.jpg`, matched: false },
 ];
 function Game() {
   const [cards, setCards] = useState([]);
