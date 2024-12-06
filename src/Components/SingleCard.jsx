@@ -1,4 +1,5 @@
 import React from "react";
+import cardback from '../assets/pictures/cardback.jpg';
 
 function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
@@ -13,7 +14,8 @@ function SingleCard({ card, handleChoice, flipped, disabled }) {
           <img className="front" src={card.src} alt="Card Front" />
           <img
             className="back"
-            src="src\assets\pictures\cardback.jpg"
+            // src="src\assets\pictures\cardback.jpg"
+            src={cardback}
             alt="Card Back"
             onClick={handleClick}
           />

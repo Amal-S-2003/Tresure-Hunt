@@ -2,14 +2,30 @@ import React, { useEffect, useState } from "react";
 import SingleCard from "../Components/SingleCard";
 import { Container } from "react-bootstrap";
 import Alert from "../Components/Alert";
+import bottle1 from "../assets/pictures/bottle1.jpg";
+import hang1 from "../assets/pictures/hang1.jpg";
+import hat1 from "../assets/pictures/hat1.jpg";
+import lens1 from "../assets/pictures/lens1.jpg";
+import ship1 from "../assets/pictures/ship1.jpg";
+import sward1 from "../assets/pictures/sward1.jpg";
+
 const cardImages = [
-  { src: `src\assets\pictures\bottle1.jpg`, matched: false },
-  { src: `src\assets\pictures\hang1.jpg`, matched: false },
-  { src: `src\assets\pictures\hat1.jpg`, matched: false },
-  { src: `src\assets\pictures\lens1.jpg`, matched: false },
-  { src: `src\assets\pictures\ship1.jpg`, matched: false },
-  { src: `src\assets\pictures\sward1.jpg`, matched: false },
+  { src: bottle1, matched: false },
+  { src: hang1, matched: false },
+  { src: hat1, matched: false },
+  { src: lens1, matched: false },
+  { src: ship1, matched: false },
+  { src: sward1, matched: false },
 ];
+
+// const cardImages = [
+//   { src: `src\\assets\\pictures\\bottle1.jpg`, matched: false },
+//   { src: `src\\assets\\pictures\\hang1.jpg`, matched: false },
+//   { src: `src\\assets\\pictures\\hat1.jpg`, matched: false },
+//   { src: `src\\assets\\pictures\\lens1.jpg`, matched: false },
+//   { src: `src\\assets\\pictures\\ship1.jpg`, matched: false },
+//   { src: `src\\assets\\pictures\\sward1.jpg`, matched: false },
+// ];
 function Game() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
